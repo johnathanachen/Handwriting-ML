@@ -11,10 +11,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--DrawingVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Handwriting_ML" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="DrawingVC" customModule="Handwriting_ML" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -43,23 +43,38 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
                                 <color key="tintColor" red="0.99989169836044312" green="1" blue="0.99988096952438354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="PREDICT"/>
+                                <connections>
+                                    <action selector="predictBtnWasPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Kdk-C0-c1O"/>
+                                </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Digit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YL2-hb-fZw">
+                                <rect key="frame" x="138" y="44" width="99" height="52"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Heavy" family="Avenir Next" pointSize="38"/>
+                                <color key="textColor" red="0.23922857642173767" green="0.88568311929702759" blue="0.39644858241081238" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="ayG-fd-Eln" firstAttribute="top" secondItem="YL2-hb-fZw" secondAttribute="bottom" constant="50" id="0sP-YK-i88"/>
                             <constraint firstItem="6dX-es-OO0" firstAttribute="top" secondItem="ayG-fd-Eln" secondAttribute="bottom" constant="30" id="4iJ-He-a6L"/>
                             <constraint firstItem="6dX-es-OO0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="6bJ-BU-iNH"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="6dX-es-OO0" secondAttribute="trailing" constant="30" id="EJv-bR-cqT"/>
                             <constraint firstItem="ayG-fd-Eln" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="NUU-dc-0mB"/>
                             <constraint firstItem="ayG-fd-Eln" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="U5Z-Di-XNi"/>
                             <constraint firstItem="xDM-WN-g8e" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ZI8-ha-xtA"/>
+                            <constraint firstItem="YL2-hb-fZw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="aUK-0h-TAh"/>
                             <constraint firstItem="xDM-WN-g8e" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="fAj-Me-Ta4"/>
                             <constraint firstItem="xDM-WN-g8e" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="k7H-SK-5xs"/>
                             <constraint firstItem="ayG-fd-Eln" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="z9F-Xn-V1D"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="drawingImageView" destination="ayG-fd-Eln" id="me1-TB-q8c"/>
+                        <outlet property="predictionLabel" destination="6dX-es-OO0" id="Pt4-iB-mpk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
